@@ -1,0 +1,46 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: stern
+spec:
+  version: "v1.11.0"
+  shortDescription: Multi pod and container log tailing for Kubernetes
+  homepage: https://github.com/wercker/stern
+  description: |
+    Stern allows you to tail multiple pods on Kubernetes and multiple
+    containers within the pod. Each result is color coded for quicker debugging.
+  caveats: |
+    See usage with:
+      kubectl stern --help
+    
+  platforms:
+  - selector:
+      matchLabels:
+      os: darwin
+      arch: amd64
+    uri: https://github.com/wercker/stern/releases/download/1.11.0/stern_darwin_amd64.tar.gz
+    sha256: "<SHA256>"
+    bin: "stern_darwin_amd64"
+    files:
+    - from: "stern_darwin_amd64"
+      to: "."
+  - selector:
+      matchLabels:
+      os: linux
+      arch: amd64
+    uri: https://github.com/jan25/stern/releases/download/1.11.0/stern_linux_amd64.tar.gz
+    sha256: "<SHA256>"
+    bin: "stern_linux_amd64"
+    files:
+    - from: "stern_linux_amd64"
+      to: "."
+  - selector:
+      matchLabels:
+      os: windows
+      arch: amd64
+    uri: https://github.com/jan25/stern/releases/download/1.11.0/stern_windows_amd64.tar.gz
+    sha256: "<SHA256>"
+    bin: "stern_windows_amd64"
+    files:
+    - from: "stern_windows_amd64.exe"
+      to: "."
