@@ -40,7 +40,7 @@ spec:
       arch: amd64
     uri: https://github.com/wercker/stern/releases/download/1.11.0/stern_windows_amd64.tar.gz
     sha256: "<SHA256>"
-    bin: "stern_windows_amd64"
+    bin: "stern_windows_amd64.exe"
     files:
     - from: "stern_windows_amd64.exe"
       to: "."
