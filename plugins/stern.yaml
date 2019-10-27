@@ -12,7 +12,7 @@ spec:
   caveats: |
     See usage with:
       kubectl stern --help
-    
+
   platforms:
   - selector:
       matchLabels:
