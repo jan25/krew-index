@@ -1,0 +1,49 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: shipperctl
+spec:
+  version: "v1.11.0"
+  shortDescription: Command line application to make working with Shipper easier
+  homepage: https://github.com/bookingcom/shipper
+  description: |
+    Shipper is an extension for Kubernetes to add sophisticated rollout strategies and multi-cluster orchestration.
+    'shipperctl admin [command]' is meant to aid cluster administrators or users who want to administer Shipper locally.
+  caveats: |
+    See usage with:
+      kubectl shipperctl
+    Visit https://docs.shipper-k8s.io/en/stable/operations/shipperctl.html for documentation
+
+  platforms:
+  - uri: https://github.com/bookingcom/shipper/releases/download/v0.7.0-alpha.0/shipperctl.darwin-amd64.tar.gz
+    sha256: "4110238434fa97e7363d5e510f2ff85b5983c3414b0bd78876c517e28c8f561b"
+    bin: "shipperctl.darwin-amd64"
+    files:
+    - from: "shipperctl.darwin-amd64"
+      to: "."
+    selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+  platforms:
+  - uri: https://github.com/bookingcom/shipper/releases/download/v0.7.0-alpha.0/shipperctl.linux-amd64.tar.gz
+    sha256: "6f5eb203dabeba8734fb4093f18f5036b131ad0728f6dc7df34b8576f60c7403"
+    bin: "shipperctl.linux-amd64"
+    files:
+    - from: "shipperctl.linux-amd64"
+      to: "."
+    selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+  platforms:
+  - uri: https://github.com/bookingcom/shipper/releases/download/v0.7.0-alpha.0/shipperctl.windows-amd64.tar.gz
+    sha256: "a41a491fa1832d093adbef0ddf72fe14b6da49ce7dac26c608d5c0ebb70672fd"
+    bin: "shipperctl.windows-amd64.exe"
+    files:
+    - from: "shipperctl.windows-amd64.exe"
+      to: "."
+    selector:
+      matchLabels:
+        os: windows
+        arch: amd64
